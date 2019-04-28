@@ -15,6 +15,6 @@ class PollList(APIView):
 class PollDetail(APIView):
 	def get(self, request, pk):
 		poll = get_object_or_404(Poll, pk=pk)
-		data = PollSerializer(Poll).data
+		data = PollSerializer(poll).data
 		return Response(data)
-
+		
